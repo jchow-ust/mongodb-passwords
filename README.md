@@ -1,5 +1,4 @@
 # Customised NoSQL database for storing login credentials with REST API endpoints
----
 
 Created a cluster in MongoDB Atlas (free tier) to store NoSQL database consisting of login credentials and associated information, such as birth dates, security questions and answers, etc. For websites which were used to submit job applications, further information such as job requirements, date applied, expected salary, and follow-up information can also be saved for ease of access during interviews or future applications with the same organisation.
 
@@ -37,3 +36,5 @@ It should be noted that the desired use case of this database favours fast read 
 [MongoDB tutorial with PyMongo](https://www.mongodb.com/languages/python/pymongo-tutorial)
 
 [FastAPI tutorial with multiple routers](https://fastapi.tiangolo.com/tutorial/bigger-applications/#path-operations-with-apirouter)
+
+[NoSQL Overview](https://jeffknupp.com/blog/2014/09/01/what-is-a-nosql-database-learn-by-writing-one-in-python/)
