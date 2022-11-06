@@ -73,17 +73,17 @@ class Credential(BaseModel):  # extend BaseModel from pydantic package
     """
     id: str = Field(default_factory=uuid.uuid4, alias="_id")  # auto-populated with universally unique identifier (UUID)
     username: str = Field(...)
-    email: Mailbox = Field(...)  # from creds_db.mailboxes
+    email: str = Field(...)  # from creds_db.mailboxes
     password: str = Field(...)
 
-    country: Country = Field(...)  # where the login is relevant (UK, Hong Kong, etc). From creds_db.countries
-    area: Area = Field(...)  # personal, job hunting, banking, email, etc. From creds_db.areas
+    country: str = Field(...)  # where the login is relevant (UK, Hong Kong, etc). From creds_db.countries
+    area: str = Field(...)  # personal, job hunting, banking, email, etc. From creds_db.areas
     # if != empty str, then this value v denotes that email address v can be used to directly log in to this site
     login_override: str = Field(...)
 
     # These all use dictionaries since there may be multiple personal details. Stored in key-value pairs in the form:
     # (k,v) where k denotes the detail (e.g. date of birth) and v denotes the value (eg 1996/12/31)
-    personal_details: dict[PersonalDetails, str] = Field(...)  # age, DOB, location, card number+PIN, etc.
+    personal_details: dict[str, str] = Field(...)  # age, DOB, location, card number+PIN, etc.
     security_questions: dict[str, str] = Field(...)
 
     class Config:
@@ -93,9 +93,9 @@ class Credential(BaseModel):  # extend BaseModel from pydantic package
             "example": {
                 "username": "rt_hon_lettuce_head_mp",
                 "password": "pleasebuyadrinkfirst",
-                # "email": "nevergonnagiveyouup@astley.co.uk",
-                # "country": "",
-                # "area": "",
+                "email": "nevergonnagiveyouup@astley.co.uk",
+                "country": "United Kingdom",
+                "area": "Banking",
                 "login_override": "",
                 "personal_details": {"Location": "Oslo, Norway"},
                 "security_questions": {"What was the name of your first pet?": "Cthulhu",

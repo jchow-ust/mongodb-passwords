@@ -38,3 +38,5 @@ It should be noted that the desired use case of this database favours fast read 
 [FastAPI tutorial with multiple routers](https://fastapi.tiangolo.com/tutorial/bigger-applications/#path-operations-with-apirouter)
 
 [NoSQL Overview](https://jeffknupp.com/blog/2014/09/01/what-is-a-nosql-database-learn-by-writing-one-in-python/)
+
+[FastAPI with Pydantic: Guide](https://progressivecoder.com/a-guide-to-fastapi-request-body-using-pydantic-basemodel/)
